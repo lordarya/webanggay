@@ -1,0 +1,333 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+
+.container{
+	display: grid;
+}
+
+.header {
+	background-color: black;
+	color : white;
+	display: flex;
+	justify-content: space-around;
+
+}
+
+
+
+.header .logo {
+	width: 250px;
+}
+
+.contact, 
+.email, 
+.location {
+	display: flex;
+	padding-top: 40px;
+	font-weight: 600;
+}
+
+.contact img,
+.email img,
+.location img {
+	height: 20px;
+}
+
+
+/*navbar*/
+nav ul{
+	width: 80%;
+	margin: auto;
+	display: flex;
+	list-style: none;
+	justify-content: space-between;
+}
+nav ul li{
+	padding: 15px 0;
+	transition: 0.5s;
+}
+nav ul li a {
+	text-decoration: none;
+	font-size: 20px;
+	color: #363636;
+	transition: 0.5s;
+	font-weight: 500;
+}
+
+nav ul li:hover {
+	background-color: #72dd78;
+	color: white;
+}
+
+nav ul li a:hover {
+	color: white;
+	transform: translateY(-5px);
+}
+
+nav ul li.scroll {
+	background-color: #72dd78;
+	color: white;
+}
+nav ul li a.scroll{
+	color: white;
+	transform: translateY(-5px);
+}
+
+nav.sticky {
+	position: fixed;
+	background-color: white;
+	width: 100%;
+	top: 0;
+}
+
+.menu-toggle {
+    display: none;
+    justify-content:space-between;
+    flex-direction: column;
+    height: 20px;
+    position: relative;
+}
+
+.menu-toggle input{
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    left: -6px;
+    top: -4px;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 3;
+
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #363434;
+    border-radius: 3px;
+    transition: all 0.5s;
+}
+nav .logo {
+	display: none;
+	padding: 10px 20px;
+	float: left;
+	font-weight: 600;
+}
+/* Hamburger menu Animasi */
+.menu-toggle span:nth-child(2){
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4){
+    transform-origin: 0 0;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    transform: rotate(45deg) translate(-0.5px, -3.5px);
+}
+.menu-toggle input:checked ~ span:nth-child(4){
+    background-color: rgb(255, 255, 255);
+    z-index: 2;
+    transform: rotate(-45deg) translate(0,0px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    opacity: 0;
+    transform: scale(0) ;
+}
+
+
+
+.hero {
+	background-color: #f6f7f9;
+	padding-left: 10%;
+	display: grid;
+	grid-template-columns: : 2fr 1fr;
+	grid-template-rows: 2fr 1fr 1fr
+	height: 500px;
+	grid-template-areas: 
+		"kosong img"
+		"header img"
+		"text img";
+
+
+}
+
+.hero img {
+	grid-area: img;
+	height: 500px;
+}
+.hero .header1 {
+	grid-area: header;
+	font-size: 3.5em;
+
+}
+p.best{
+	color: #636e72;
+	font-weight: 100;
+}
+p.coffe{
+	font-weight: 600;
+}
+p.espresso {
+	font-weight: 900;
+	color: #72dd78;
+}
+.hero p.text {
+	grid-area: text;
+	padding-bottom: 20px;
+
+}
+
+.spacer {
+	padding: 1000px 0 ;
+}
+
+
+/*Responsive*/
+
+@media screen and (max-width:578px){
+	nav ul {
+		position: absolute;
+		flex-direction: column;
+		background-color: black;
+		width: 100%;
+		text-align: center;
+		height: 100vh;
+		top: 0;
+		transform: translateY(-100%);
+		transition: 1s;
+	}
+	nav ul li a {
+		color: white;
+	}
+
+	.header {
+	background-color: black;
+	color : white;
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+	grid-template-rows: 1fr 1fr 1fr;
+	grid-template-areas: "img text1" "img text2" "img text3";
+	align-content: space-around;
+
+	}
+
+	.header .logo {
+		width: 200px;
+		grid-area: img;
+	}
+	.contact {
+		grid-area: text1;
+	}
+	.email {
+		grid-area: text2;
+	}
+	.location {
+		grid-area: text3;
+	}
+	.contact, 
+	.email, 
+	.location {
+		font-size: 10px;
+	}
+
+
+	.navbar {
+		order: -1;
+		position: relative;
+	}
+	.menu-toggle {
+		padding: 10px;
+		display: flex;
+		float: right;
+	}
+
+	.hero img {
+		height: 350px;
+	}
+
+	.hero .header1 {
+		font-size: 2em;
+	}
+	.hero .text {
+		font-size: 12px;
+	}
+	nav .logo {
+		display: block;
+	}
+
+	nav ul.slide{
+		transform: translateY(0);
+	}
+}
+
+.about {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: column; 
+
+}
+.header2 span {
+	color: #72dd78;
+}
+
+.about .header2 {
+	font-weight: 700;
+	font-size: 3.5em;
+	padding-left: 10%;
+} 
+.about .text{
+	padding-left: 10%;
+}
+img.about {
+	width: 700px;
+	padding-left: 10%;
+}
+
+.coffee {
+	margin-top: 30px;
+	display: grid;
+}
+.header3 span {
+	color: #72dd78;
+}
+
+.coffee .header3 {
+	font-weight: 700;
+	font-size: 3.5em;
+	padding-left: 10%;
+} 
+.coffee .text{
+	padding-left: 10%;
+}
+
+.row {
+	display: flex;
+	width: 80%;
+	margin: auto;
+}
+
+.card img {
+	width: 300px;
+	height: 80%;
+}
+.card {
+	overflow: hidden;
+	border-radius: 5px;
+	margin: 10px;
+	box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.25);
+}
+.card-header{
+	text-align: center;
+	padding: 10px 0;
+}
